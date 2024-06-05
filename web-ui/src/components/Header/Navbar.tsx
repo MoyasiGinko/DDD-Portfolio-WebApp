@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
+import FadingShadow from "./FadingShadow";
 
 const lefttabs = ["Home", "About", "FAQ"];
 const righttabs = ["Works", "Pricing", "Contact"];
 
-const Navbar = () => {
+export const Navbar = () => {
   const [selected, setSelected] = useState(lefttabs[0]);
   const [position, setPosition] = useState({
     left: 0,
@@ -36,9 +37,11 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a className="text-slate-300 hover:text-slate-200 block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base">
-          <span className="relative z-10">LOGO</span>
-        </a>
+        <FadingShadow>
+          <a className="text-slate-300 block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base">
+            <span className="relative z-10">LOGO</span>
+          </a>
+        </FadingShadow>
 
         <div className="flex">
           {righttabs.map((tab) => (
@@ -99,5 +102,3 @@ const Cursor = ({ position }) => {
     />
   );
 };
-
-export default Navbar;

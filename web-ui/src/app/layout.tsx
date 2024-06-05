@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { HeaderTabs } from "../components/Header/HeaderTabs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="flex justify-center items-center sticky top-0 z-[999]">
+          <HeaderTabs />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
