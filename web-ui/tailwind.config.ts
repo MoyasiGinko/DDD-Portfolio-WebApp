@@ -2,12 +2,21 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      keyframes: {
+        "shadow-fade": {
+          "0%": { "box-shadow": "none" }, // Start with no shadow
+          "100%": { "box-shadow": "0 0 10px rgba(0, 0, 255, 0.2)" }, // Fade to blue shadow
+        },
+      },
+      boxShadow: {
+        "cyan-hover": "0 0 10px rgba(0, 228, 255, 0.2)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
