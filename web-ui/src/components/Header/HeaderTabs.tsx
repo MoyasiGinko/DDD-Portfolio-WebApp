@@ -5,10 +5,8 @@ import FadingShadow from "./FadingShadow";
 
 export const HeaderTabs = (): React.ReactNode => {
   return (
-    <div className="flex justify-center items-center ">
-      <FadingShadow>
-        <Navbar />
-      </FadingShadow>
+    <div className="absolute mt-2">
+      <Navbar />
     </div>
   );
 };

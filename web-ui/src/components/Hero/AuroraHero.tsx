@@ -33,9 +33,9 @@ export const AuroraHero = () => {
       style={{
         backgroundImage,
       }}
-      className="absolute grid w-full min-h-screen top-0 place-content-center overflow-hidden bg-gray-950 px-4 text-gray-200"
+      className="relative grid w-full min-h-screen top-0 place-content-center overflow-hidden bg-gray-950 px-4 text-gray-200"
     >
-      <div className="relative z-[10] flex flex-col items-center">
+      <div className="relative flex flex-col items-center">
         <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">
           Beta Now Live!
         </span>
@@ -64,7 +64,7 @@ export const AuroraHero = () => {
         </motion.button>
       </div>
 
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0">
         <Canvas>
           <Stars radius={50} count={2500} factor={4} fade speed={2} />
         </Canvas>

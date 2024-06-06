@@ -15,7 +15,7 @@ export const Navbar = () => {
   });
 
   return (
-    <div className="px-3 py-3 bg-slate-900 rounded-full flex items-center flex-wrap gap-2">
+    <div className="px-3 py-3 mt-20 bg-slate-900 rounded-full flex items-center flex-wrap gap-2">
       <ul
         onMouseLeave={() => {
           setPosition((pv) => ({
@@ -23,7 +23,7 @@ export const Navbar = () => {
             opacity: 0,
           }));
         }}
-        className="relative mx-auto flex w-fit justify-between gap-10 rounded-full shadow-cyan-hover bg-slate-800 p-1 "
+        className="relative mx-auto  flex w-fit justify-between gap-10 rounded-full shadow-cyan-hover bg-slate-800 p-1 "
       >
         <div className="flex ">
           {lefttabs.map((tab) => (
@@ -37,11 +37,9 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <FadingShadow>
-          <a className="text-slate-300 block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base">
-            <span className="relative z-10">LOGO</span>
-          </a>
-        </FadingShadow>
+        <a className="text-slate-300 block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base">
+          <span className="relative">LOGO</span>
+        </a>
 
         <div className="flex">
           {righttabs.map((tab) => (
@@ -78,14 +76,14 @@ const Tab = ({ text, selected, setSelected, setPosition }) => {
       }}
       className={`${
         selected ? "text-white" : "text-slate-300 hover:text-slate-200"
-      } relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base transition-colors`}
+      } relative z-[10] block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base transition-colors`}
     >
-      <span className="relative z-10">{text}</span>
+      <span className="relative z-[10]">{text}</span>
       {selected && (
         <motion.span
           layoutId="pill-tab"
           transition={{ type: "spring", duration: 0.5 }}
-          className="absolute inset-0 z-0 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"
+          className="absolute inset-0 z-[0] bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"
         ></motion.span>
       )}
     </li>
@@ -98,7 +96,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-black md:h-12"
+      className="absolute z-[0] h-7 rounded-full bg-black md:h-12"
     />
   );
 };
