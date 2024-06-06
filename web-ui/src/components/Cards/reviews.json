@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "image": "/imgs/head-shots/7.jpg",
+    "quote": "\"01 I feel like I've learned as much from X as I did completing my masters. It's the first thing I read every morning.\"",
+    "name": "Jenn F. - Marketing Director @ Square"
+  },
+  {
+    "id": 2,
+    "image": "/imgs/head-shots/8.jpg",
+    "quote": "\"02 My boss thinks I know what I'm doing. Honestly, I just read this newsletter.\"",
+    "name": "Adrian Y. - Product Marketing @ Meta"
+  },
+  {
+    "id": 3,
+    "image": "/imgs/head-shots/9.jpg",
+    "quote": "\"03 Can not believe this is free. If X was $5,000 a month, it would be worth every penny. I plan to name my next child after X.\"",
+    "name": "Devin R. - Growth Marketing Lead @ OpenAI"
+  },
+  {
+    "id": 4,
+    "image": "/imgs/head-shots/8.jpg",
+    "quote": "\"04 My boss thinks I know what I'm doing. Honestly, I just read this newsletter.\"",
+    "name": "Adrian Y. - Product Marketing @ Meta"
+  },
+  {
+    "id": 5,
+    "image": "/imgs/head-shots/9.jpg",
+    "quote": "\"05 Can not believe this is free. If X was $5,000 a month, it would be worth every penny. I plan to name my next child after X.\"",
+    "name": "Devin R. - Growth Marketing Lead @ OpenAI"
+  }
+]
