@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import FadingShadow from "./FadingShadow";
 
-const lefttabs = ["Home", "About", "FAQ"];
-const righttabs = ["Works", "Pricing", "Contact"];
+const lefttabs = ["Home", "About", "Works", "Services"];
+const righttabs = ["Why Us?", "Pricing", "Contact", "FAQ"];
 
 export const Navbar = () => {
   const [selected, setSelected] = useState(lefttabs[0]);
@@ -78,7 +78,9 @@ const Tab = ({ text, selected, setSelected, setPosition }) => {
         selected ? "text-white" : "text-slate-300 hover:text-slate-200"
       } relative z-[10] block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base transition-colors`}
     >
-      <span className="relative z-[10]">{text}</span>
+      <a href={`#${text}`} className="relative z-[10]">
+        {text}
+      </a>
       {selected && (
         <motion.span
           layoutId="pill-tab"

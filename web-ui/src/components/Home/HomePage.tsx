@@ -13,19 +13,37 @@ import Footer from "../Footer/FooterPage";
 
 export const HomePage = (): React.ReactNode => {
   return (
-    <main className=" mt-0">
-      <AuroraHero />
-      <div className="">
+    <main className="mt-0">
+      <div id="Home">
+        <AuroraHero />
+      </div>
+      <div id="About">
         <TextParallaxContentExample />
       </div>
-      <BouncyCardsFeatures />
-      <TestimonialCarousel />
-      <WhyChooseUs />
-      <OurServices />
-      <OtherServices />
-      <Pricing />
-      <Contact />
-      <FAQ />
+      <div id="Works">
+        <BouncyCardsFeatures />
+      </div>
+      <div id="Reviews">
+        <TestimonialCarousel />
+      </div>
+      <div id="Why Us?">
+        <WhyChooseUs />
+      </div>
+      <div id="Services">
+        <OurServices />
+      </div>
+      <div>
+        <OtherServices />
+      </div>
+      <div id="Pricing">
+        <Pricing />
+      </div>
+      <div id="Contact">
+        <Contact />
+      </div>
+      <div id="FAQ">
+        <FAQ />
+      </div>
       <Footer />
     </main>
   );

@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export const BouncyCardsFeatures = () => {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 text-slate-800">
+    <section className="mx-auto px-24 py-12 bg-slate-900 text-slate-800">
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
-        <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
+        <h2 className="max-w-lg text-4xl font-bold md:text-5xl text-slate-400">
           Grow faster with our
           <span className="text-slate-400"> all in one solution</span>
         </h2>
