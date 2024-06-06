@@ -16,7 +16,7 @@ function MeshComponent() {
   });
 
   return (
-    <mesh ref={mesh}>
+    <mesh ref={mesh} scale={[3, 3, 3]}>
       <primitive object={gltf.scene} />
     </mesh>
   );
@@ -24,8 +24,8 @@ function MeshComponent() {
 
 export function Planet() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <Canvas className="h-2xl w-2xl">
+    <div className="flex justify-center items-center w-full h-full">
+      <Canvas className="w-full h-full">
         <OrbitControls />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />

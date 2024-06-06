@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://www.optimizely.com/contentassets/8f702b2972564a0f80e5660cf7e1e4f3/smarter-stack.png",
+    "title": "Web Development",
+    "id": 1
+  },
+  {
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgj7ky3NcJuoq8wwvnGJw3--yEGEszcMb9IoY9PChrCxXN9HcaFnFkwKWZ9JIRvDT0okI&usqp=CAU",
+    "title": "Mobile App Development",
+    "id": 2
+  },
+  {
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyza5WNSkujTrLViVpcOi1rRzutehgpVOK2lTZXd2OqHadjKb4UqoqfXVd5z3IdYNdc8I&usqp=CAU",
+    "title": "SEO Optimization",
+    "id": 3
+  },
+  {
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8PRR0v4UwyyrHazLSdcTrpmG5PHoVK8mhXw&s",
+    "title": "Digital Marketing",
+    "id": 4
+  },
+  {
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSktHoJa7_yo9-qLOTilovJhTnvGFjTXdlz_WLcfhTdYGUgIMvJwUOY0qUgLIMdmBtGqQU&usqp=CAU",
+    "title": "Graphic Design",
+    "id": 5
+  },
+  {
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeGG40y6d6kGLyuEk7riCbH0gEE0lFm0-6XRjlbFwMjXUXA2mnq3yV5vBVV927iJqSkvI&usqp=CAU",
+    "title": "Content Writing",
+    "id": 6
+  },
+  {
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU1wW9VcWCrVZ3vHc5QdywwsZT6w3NYMkfCw&s",
+    "title": "Consulting",
+    "id": 7
+  }
+]

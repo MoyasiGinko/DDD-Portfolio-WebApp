@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "High Quality",
+    "description": "We provide high-quality products that meet your needs.",
+    "icon": "🔧"
+  },
+  {
+    "id": 2,
+    "title": "Customer Support",
+    "description": "24/7 customer support to assist you with your queries.",
+    "icon": "💬"
+  },
+  {
+    "id": 3,
+    "title": "Affordable Prices",
+    "description": "Competitive prices for the best value.",
+    "icon": "💲"
+  },
+  {
+    "id": 4,
+    "title": "Fast Delivery",
+    "description": "Quick and reliable delivery services.",
+    "icon": "🚚"
+  }
+]
