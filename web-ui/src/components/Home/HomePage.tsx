@@ -1,3 +1,4 @@
+"use clietn";
 import React from "react";
 import { AuroraHero } from "../Hero/AuroraHero";
 import { TextParallaxContentExample } from "../Featured/TextFeature";
@@ -10,12 +11,14 @@ import Pricing from "../Pricing/PricingPage";
 import Contact from "../Contact/ContactForm";
 import FAQ from "../FAQ/FaqPage";
 import Footer from "../Footer/FooterPage";
+import CustomHero from "../Hero/CustomHero";
 
 export const HomePage = (): React.ReactNode => {
   return (
     <main className="mt-0">
       <div id="Home">
-        <AuroraHero />
+        <CustomHero />
+        {/* <AuroraHero /> */}
       </div>
       <div id="About">
         <TextParallaxContentExample />

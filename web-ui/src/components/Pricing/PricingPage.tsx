@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import logo from "@/public/images/v-logo.png";
 
 const Pricing = () => {
   return (
@@ -73,7 +74,7 @@ const PricingCard = ({ title, price, features, link, isRecommended }) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="text-white bg-slate-950 p-6 rounded-2xl"
+      className="text-white bg-slate-600/20 p-6 rounded-2xl"
     >
       {isRecommended && (
         <p className="uppercase font-bold text-[#2a2a28] mainfont bg-[#e0f63c] px-6 py-2 rounded-3xl shadow-sm w-fit relative bottom-10">
@@ -84,10 +85,10 @@ const PricingCard = ({ title, price, features, link, isRecommended }) => {
         <img
           alt="Logo"
           loading="lazy"
-          width="200"
-          height="200"
+          width="100"
+          height="100"
           decoding="async"
-          src="path/to/your/logo.png"
+          src={logo.src}
           className="h-auto"
         />
         <p className="uppercase font-bold mainfont bg-[#2a2a28] px-6 py-2 rounded-3xl shadow-sm">

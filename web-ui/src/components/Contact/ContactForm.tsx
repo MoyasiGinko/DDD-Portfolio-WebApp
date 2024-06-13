@@ -23,7 +23,7 @@ const Contact = () => {
     <div className="bg-transparent py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-100">Contact Us</h2>
+          <h2 className="text-6xl font-bold text-gray-100">Contact Us</h2>
           <p className="mt-2 text-sm text-gray-300">
             We'd love to hear from you. Please fill out the form below.
           </p>
@@ -98,9 +98,9 @@ const Contact = () => {
               </div>
             </form>
           </motion.div>
-          <div className="w-full lg:w-1/2 h-96 rounded-lg overflow-hidden">
+          {/* <div className="w-full lg:w-1/2 h-96 rounded-lg overflow-hidden">
             <Planet />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
