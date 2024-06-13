@@ -53,7 +53,7 @@ const CustomHero = () => {
           </motion.h1>
           <div className="h-[6rem] max-sm:h-[3rem] overflow-hidden words">
             <motion.p
-              className="text-[100px] ml-8 max-sm:ml-2 text-left font-extrabold zip capitalize leading-[100px] max-sm:leading-[50px] max-sm:text-[40px]"
+              className="text-[100px] w-[520px] ml-8 max-sm:ml-2 text-left font-extrabold zip capitalize leading-[100px] max-sm:leading-[50px] max-sm:text-[40px]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
