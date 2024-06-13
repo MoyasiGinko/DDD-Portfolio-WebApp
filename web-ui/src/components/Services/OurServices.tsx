@@ -21,9 +21,13 @@ interface Cards {
 const OurServices = () => {
   return (
     <div className="bg-transparent text-slate-50">
-      <h1 className="font-bold uppercase text-4xl text-center text-neutral-100">
+      <h1 className="mainfont text-[#ffffff] text-center font-bold text-[64px] max-sm:text-2xl">
         Our Services
       </h1>
+      <p className=" text-[20px] max-sm:text-[16px] max-sm:mt-5 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent text-center w-[50%] max-sm:w-full font-semibold m-auto">
+        Whether you design alone or with a team, we have a plan that fits your
+        needs, including custom design systems.
+      </p>
       <HorizontalScrollCarousel />
     </div>
   );

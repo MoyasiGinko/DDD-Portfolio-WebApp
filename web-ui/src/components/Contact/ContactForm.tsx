@@ -16,7 +16,7 @@ interface Socials {
 
 const Contact = () => {
   return (
-    <div className="bg-transparent mt-12 min-h-screen">
+    <div className="bg-transparent mt-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="mb-2 text-6xl font-bold text-gray-100">Contact Us</h2>
