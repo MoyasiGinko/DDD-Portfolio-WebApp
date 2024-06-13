@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import VideoEmbed from "./VideoEmbed";
@@ -36,11 +36,26 @@ const StickyVideo = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["end end", "end start"],
+    offset: ["start end", "start start"], // Adjusted offsets for the sticky effect
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollYProgress.get() >= 0.5) {
+        const iframe = document.getElementById("widget2");
+        iframe.contentWindow.postMessage(
+          '{"event":"command","func":"playVideo","args":""}',
+          "*"
+        );
+      }
+    };
+
+    scrollYProgress.onChange(handleScroll);
+    return () => scrollYProgress.clearListeners();
+  }, [scrollYProgress]);
 
   return (
     <motion.div
@@ -50,6 +65,7 @@ const StickyVideo = () => {
         height: `calc(100vh - ${IMG_PADDING * 2}px)`,
         top: IMG_PADDING,
         scale,
+        opacity,
       }}
       ref={targetRef}
       className="sticky z-0 overflow-hidden rounded-3xl"
@@ -81,3 +97,5 @@ const ExampleContent = () => (
     </div>
   </div>
 );
+
+export default TextParallaxContentExample;
