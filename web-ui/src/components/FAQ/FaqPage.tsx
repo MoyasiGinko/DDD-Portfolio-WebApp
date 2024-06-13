@@ -37,8 +37,8 @@ const FAQ = () => {
   return (
     <section className="overflow-hidden bg-transparent px-4 py-12 text-slate-50">
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <span className="mb-8 text-5xl font-bold">FAQs</span>
-        <span className="mb-8 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text font-medium text-transparent">
+        <span className="mb-2 text-5xl font-bold">FAQs</span>
+        <span className="mb-4 text-[20px] max-sm:text-[16px] max-sm:mt-5 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent text-center w-[50%] max-sm:w-full font-semibold m-auto">
           Let's answer some questions
         </span>
       </div>

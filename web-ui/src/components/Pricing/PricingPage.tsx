@@ -10,12 +10,12 @@ const Pricing = () => {
         <h1 className="mainfont text-[#ffffff] text-center font-bold text-[64px] max-sm:text-2xl">
           Choose what works for you
         </h1>
-        <p className="text-[20px] max-sm:text-[16px] max-sm:mt-5 text-[#fdfdfd] text-center w-[50%] max-sm:w-full font-semibold m-auto">
+        <p className="mb-4 text-[20px] max-sm:text-[16px] max-sm:mt-5 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent text-center w-[50%] max-sm:w-full font-semibold m-auto">
           Whether you design alone or with a team, we have a plan that fits your
           needs, including custom design systems.
         </p>
       </div>
-      <div className="grid grid-cols-3 items-center gap-10 justify-center mt-40 max-sm:mt-10 max-sm:grid-cols-1">
+      <div className="grid grid-cols-3 items-center gap-10 justify-center mt-14 max-sm:mt-10 max-sm:grid-cols-1">
         <PricingCard
           title="Beginner"
           price="$950"

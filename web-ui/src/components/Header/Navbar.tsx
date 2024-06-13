@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import FadingShadow from "./FadingShadow";
 
-const lefttabs = ["Home", "About", "Works", "Services"];
-const righttabs = ["Why Us?", "Pricing", "Contact", "FAQ"];
+const lefttabs = ["Home", "Works", "Reviews", "Why Us?"];
+const righttabs = ["Services", "Pricing", "Contact", "FAQ"];
 
 export const Navbar = () => {
   const [selected, setSelected] = useState(lefttabs[0]);

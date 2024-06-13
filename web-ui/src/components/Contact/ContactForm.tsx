@@ -19,8 +19,8 @@ const Contact = () => {
     <div className="bg-transparent mt-12 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-6xl font-bold text-gray-100">Contact Us</h2>
-          <p className="mt-2 text-sm text-gray-300">
+          <h2 className="mb-2 text-6xl font-bold text-gray-100">Contact Us</h2>
+          <p className="mb-4 text-[20px] max-sm:text-[16px] max-sm:mt-5 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent text-center w-[50%] max-sm:w-full font-semibold m-auto">
             We'd love to hear from you. Please contact us from one of the
             options below.
           </p>
