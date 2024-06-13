@@ -37,10 +37,10 @@ const FAQ = () => {
   return (
     <section className="overflow-hidden bg-transparent px-4 py-12 text-slate-50">
       <div className="relative z-10 flex flex-col items-center justify-center">
+        <span className="mb-8 text-5xl font-bold">FAQs</span>
         <span className="mb-8 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text font-medium text-transparent">
           Let's answer some questions
         </span>
-        <span className="mb-8 text-5xl font-bold">FAQs</span>
       </div>
       <span className="absolute -top-[350px] left-[50%] z-0 h-[500px] w-[600px] -translate-x-[50%] rounded-full bg-gradient-to-r from-violet-600/20 to-indigo-600/20 blur-3xl"></span>
       <div className="relative z-10 flex flex-wrap items-center justify-center gap-4">

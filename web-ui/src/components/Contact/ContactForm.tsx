@@ -1,110 +1,125 @@
 "use client";
-import React, { useState, Suspense } from "react";
-import { motion } from "framer-motion";
-import { Planet } from "@/src/models/Planet";
+import React, { useRef, useEffect, useState } from "react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
+import socialData from "./socialData.json";
+
+interface Socials {
+  id: number;
+  url: string;
+  title: string;
+}
 
 const Contact = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-  };
-
   return (
-    <div className="bg-transparent py-12">
+    <div className="bg-transparent mt-12 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-6xl font-bold text-gray-100">Contact Us</h2>
           <p className="mt-2 text-sm text-gray-300">
-            We'd love to hear from you. Please fill out the form below.
+            We'd love to hear from you. Please contact us from one of the
+            options below.
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-slate-900 rounded-lg shadow-lg p-8 w-full lg:w-1/2"
-          >
-            <form onSubmit={handleSubmit}>
-              <div className="mb-6">
-                <label
-                  htmlFor="name"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Name
-                </label>
-                <motion.input
-                  whileFocus={{ scale: 1.05 }}
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Email
-                </label>
-                <motion.input
-                  whileFocus={{ scale: 1.05 }}
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="message"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Message
-                </label>
-                <motion.textarea
-                  whileFocus={{ scale: 1.05 }}
-                  id="message"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                ></motion.textarea>
-              </div>
-              <div className="text-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  type="submit"
-                  className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                  Send Message
-                </motion.button>
-              </div>
-            </form>
-          </motion.div>
-          {/* <div className="w-full lg:w-1/2 h-96 rounded-lg overflow-hidden">
-            <Planet />
-          </div> */}
+        <div className="flex flex-wrap justify-center gap-8">
+          {socialData.map((card) => (
+            <motion.div
+              key={card.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-transparent rounded-lg shadow-lg p-8 w-full sm:w-1/2 lg:w-1/3"
+            >
+              <TiltCard card={card} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
+const TiltCard = ({ card }: { card: Socials }) => {
+  const ref = useRef(null);
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const xSpring = useSpring(x);
+  const ySpring = useSpring(y);
+
+  const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return;
+
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
+    const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
+
+    const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
+    const rY = mouseX / width - HALF_ROTATION_RANGE;
+
+    x.set(rX);
+    y.set(rY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transformStyle: "preserve-3d",
+        transform,
+      }}
+      className="relative h-96 w-full rounded-xl bg-gradient-to-br from-indigo-300/40 to-violet-300/10"
+    >
+      <div
+        style={{
+          transform: "translateZ(75px)",
+          transformStyle: "preserve-3d",
+        }}
+        className="absolute inset-4 grid place-content-center rounded-xl bg-transparent"
+      >
+        <div className="relative h-full w-full flex flex-col items-center justify-between  rounded-xl">
+          <img
+            src={card.url}
+            alt={card.title}
+            className="h-full w-full object-cover rounded-t-xl"
+            style={{
+              transform: "translateZ(75px)",
+            }}
+          />
+          <div
+            style={{
+              transform: "translateZ(75px)",
+            }}
+            className="w-full flex justify-center py-2"
+          >
+            <button className="bg-gradient-to-br from-indigo-300/40 to-violet-300/10 text-white py-2 px-4 rounded-lg">
+              {card.title}
+            </button>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const ROTATION_RANGE = 32.5;
+const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 export default Contact;

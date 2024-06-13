@@ -122,6 +122,11 @@ const TiltCard = ({ card }) => {
           }}
           className="absolute inset-0 z-0 rounded-xl"
         ></div>
+        <img
+          src={card.url}
+          alt={card.title}
+          className="absolute inset-0 z-0 rounded-xl"
+        />
         <div
           style={{
             transform: "translateZ(50px)",
