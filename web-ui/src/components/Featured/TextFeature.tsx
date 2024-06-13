@@ -42,39 +42,6 @@ const StickyVideo = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const iframe = document.getElementById("widget2");
-      if (!iframe) return;
-
-      const rect = iframe.getBoundingClientRect();
-      const windowHeight =
-        window.innerHeight || document.documentElement.clientHeight;
-      const middleScreen = windowHeight / 2;
-
-      // Calculate if the middle of the iframe is within the middle of the screen
-      const isMiddleOfScreen =
-        rect.top <= middleScreen && rect.bottom >= middleScreen;
-
-      // Check if the video should play or pause
-      if (isMiddleOfScreen && scrollYProgress.get() >= 0.5) {
-        iframe.contentWindow.postMessage(
-          '{"event":"command","func":"playVideo","args":""}',
-          "*"
-        );
-      } else {
-        iframe.contentWindow.postMessage(
-          '{"event":"command","func":"pauseVideo","args":""}',
-          "*"
-        );
-      }
-    };
-
-    handleScroll(); // Initial check
-    scrollYProgress.onChange(handleScroll);
-    return () => scrollYProgress.clearListeners();
-  }, [scrollYProgress]);
-
   return (
     <motion.div
       style={{
