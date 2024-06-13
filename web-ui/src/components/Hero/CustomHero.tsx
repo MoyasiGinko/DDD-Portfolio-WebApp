@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const platforms = [
   "youtube",
@@ -9,6 +9,14 @@ const platforms = [
   "Instagram",
   "youtube",
   "tiktok",
+];
+const colors = [
+  "linear-gradient(90deg, rgba(255, 0, 110, 0.6) 0%, rgba(238, 130, 238, 0.6) 100%)", // Gradient red with 60% opacity
+  "linear-gradient(90deg, rgba(193, 53, 132, 0.6) 0%, rgba(238, 130, 238, 0.6) 100%)", // Gradient pink with 60% opacity
+  "linear-gradient(90deg, rgba(105, 201, 208, 0.6) 0%, rgba(173, 216, 230, 0.6) 100%)", // Gradient cyan with 60% opacity
+  "linear-gradient(90deg, rgba(193, 53, 132, 0.6) 0%, rgba(238, 130, 238, 0.6) 100%)", // Gradient pink with 60% opacity
+  "linear-gradient(90deg, rgba(255, 10, 110, 0.6) 0%, rgba(238, 130, 238, 0.6) 100%)", // Gradient red with 60% opacity
+  "linear-gradient(90deg, rgba(105, 201, 208, 0.6) 0%, rgba(173, 216, 230, 0.6) 100%)", // Gradient cyan with 60% opacity
 ];
 
 const CustomHero = () => {
@@ -42,7 +50,7 @@ const CustomHero = () => {
           Grow super fast
           <br />
         </motion.h1>
-        <div className="flex justify-center mt-2">
+        <div className="flex justify-center mt-2 items-center">
           <motion.h1
             className="text-[100px] text-center font-extrabold text-white capitalize leading-[100px] max-sm:leading-[50px] max-sm:text-[50px]"
             initial={{ opacity: 0, x: -20 }}
@@ -51,13 +59,24 @@ const CustomHero = () => {
           >
             on
           </motion.h1>
-          <div className="h-[6rem] max-sm:h-[3rem] overflow-hidden words">
+          <div className="relative h-[8rem] max-sm:h-[3rem] overflow-hidden ml-4 max-sm:ml-2">
             <motion.p
-              className="text-[100px] w-[520px] ml-8 max-sm:ml-2 text-left font-extrabold zip capitalize leading-[100px] max-sm:leading-[50px] max-sm:text-[40px]"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
               key={currentPlatform}
+              className="text-[100px] w-[520px] ml-8 max-sm:ml-2 text-left font-extrabold zip capitalize leading-[120px] max-sm:leading-[50px] max-sm:text-[40px]"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 200,
+                damping: 10,
+              }}
+              style={{
+                background: colors[currentPlatform],
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
             >
               {platforms[currentPlatform]}
             </motion.p>
@@ -82,13 +101,13 @@ const CustomHero = () => {
           ></path>
         </motion.svg>
         <motion.p
-          className="text-[21px] font-normal text-center mt-10 mx-10 max-sm:mx-4 max-sm:text-[15px] max-sm:mt-1"
+          className="text-[21px] font-normal text-center text-gray-500 mt-10 mx-10 max-sm:mx-4 max-sm:text-[15px] max-sm:mt-1"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Generate views and sales with our expert team, who have worked with
-          the biggest creators. Relax, we handle it all for you.
+          the <br /> biggest creators. Relax, we handle it all for you.
         </motion.p>
         <div className="flex justify-center gap-5 mt-10 max-sm:flex-wrap">
           <motion.a
