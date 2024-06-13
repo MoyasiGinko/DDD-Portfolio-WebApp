@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import image from "@/public/images/hero-bg.png";
+import Image from "next/image";
 
 const platforms = [
   "youtube",
@@ -30,8 +32,17 @@ const CustomHero = () => {
   }, []);
 
   return (
-    <div className="py-10 rounded-3xl mx-[3%] h-screen max-sm:py-8">
-      <div className="mx-40 max-sm:mx-6 mt-20">
+    <div
+      className="py-10 rounded-3xl mx-auto h-screen max-sm:py-8 relative"
+      style={{
+        backgroundImage: `url(${image.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+      {/* Overlay to darken the background */}
+      <div className="mx-40 max-sm:mx-6 mt-20 relative z-10">
         <motion.h1
           className="uppercase text-center text-xl mb-5 text-[#DBFA9B] max-sm:text-sm"
           initial={{ opacity: 0, y: -20 }}
