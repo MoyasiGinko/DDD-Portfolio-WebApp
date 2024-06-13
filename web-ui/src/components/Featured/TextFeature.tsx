@@ -2,15 +2,12 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
+import VideoEmbed from "./VideoEmbed";
 
 export const TextParallaxContentExample = () => {
   return (
     <div className="bg-transparent mt-6">
-      <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        subheading="Quality"
-        heading="Never compromise."
-      >
+      <TextParallaxContent>
         <ExampleContent />
       </TextParallaxContent>
     </div>
@@ -19,7 +16,7 @@ export const TextParallaxContentExample = () => {
 
 const IMG_PADDING = 12;
 
-const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
+const TextParallaxContent = ({ children }) => {
   return (
     <div
       style={{
@@ -28,15 +25,14 @@ const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
       }}
     >
       <div className="relative h-[150vh]">
-        <StickyImage imgUrl={imgUrl} />
-        <OverlayCopy heading={heading} subheading={subheading} />
+        <StickyImage />
       </div>
       {children}
     </div>
   );
 };
 
-const StickyImage = ({ imgUrl }) => {
+const StickyImage = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -49,7 +45,6 @@ const StickyImage = ({ imgUrl }) => {
   return (
     <motion.div
       style={{
-        backgroundImage: `url(${imgUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: `calc(100vh - ${IMG_PADDING * 2}px)`,
@@ -59,12 +54,7 @@ const StickyImage = ({ imgUrl }) => {
       ref={targetRef}
       className="sticky z-0 overflow-hidden rounded-3xl"
     >
-      <motion.div
-        className="absolute inset-0 "
-        style={{
-          opacity,
-        }}
-      />
+      <VideoEmbed />
     </motion.div>
   );
 };
