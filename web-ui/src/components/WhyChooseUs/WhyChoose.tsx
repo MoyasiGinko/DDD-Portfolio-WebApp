@@ -18,19 +18,24 @@ const WhyChooseUs = () => {
 
   return (
     <div className="bg-tranparent px-8 py-24 text-slate-50">
-      <h2 className="mb-12 text-center text-4xl font-bold">
-        Why You Should Choose Us?
-      </h2>
+      <div>
+        <h1 className="mainfont text-[#ffffff] text-center font-bold text-[64px] max-sm:text-2xl">
+          Why You Should Choose Us?
+        </h1>
+        <p className="mb-12 text-[20px] max-sm:text-[16px] max-sm:mt-5 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent text-center w-[50%] max-sm:w-full font-semibold m-auto">
+          Whether you design alone or with a team, we have a plan that fits your
+          needs, including custom design systems.
+        </p>
+      </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         {features.map((feature) => (
           <motion.div
             key={feature.id}
-            className="feature-card flex flex-col items-center space-y-4 rounded-2xl border-2 border-slate-700 bg-slate-800/20 p-6 shadow-xl backdrop-blur-md"
+            className="flex flex-col items-center space-y-4 rounded-2xl  shadow-xl backdrop-blur-md group border border-indigo-700 bg-slate-700/20 cursor-pointer p-4  hover:bg-purple-900/50 hover:text-white duration-300"
             initial={{ opacity: 0, y: 50 }} // Initial state
             animate={{ opacity: 1, y: 0 }} // Final state
-            transition={{ duration: 0.5, delay: feature.id * 0.2 }} // Animation timing
-            whileHover={{ scale: 1.05 }} // Hover animation
-            whileTap={{ scale: 0.95 }} // Tap animation
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <div className="text-5xl">{feature.icon}</div>
             <div className="text-3xl">{feature.title}</div>

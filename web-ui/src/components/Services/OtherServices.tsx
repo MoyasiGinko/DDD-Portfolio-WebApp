@@ -76,7 +76,7 @@ const OtherServices = () => {
         {services.map((service) => (
           <motion.div
             key={service.id}
-            className="group border border-indigo-500 bg-slate-500/20 cursor-pointer p-4 rounded-xl h-[12rem] hover:bg-purple-500/50 hover:text-black duration-300"
+            className="group border border-indigo-700 bg-slate-500/20 cursor-pointer p-4 rounded-xl h-[12rem] hover:bg-purple-500/50 hover:text-black duration-300"
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
