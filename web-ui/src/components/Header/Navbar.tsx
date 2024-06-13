@@ -14,8 +14,14 @@ export const Navbar = () => {
     opacity: 0,
   });
 
+  const bgColor = "rgba(39, 47, 73, 0.3)"; // Slate with 90% opacity
+  const navColor = "rgba(39, 47, 73, 0.4)"; // Slightly less opaque on hover
+
   return (
-    <div className="px-3 py-3 mt-20 bg-slate-900 rounded-full flex items-center flex-wrap gap-2">
+    <div
+      className="px-2 py-2 mt-20  rounded-full flex items-center flex-wrap gap-2"
+      style={{ backgroundColor: bgColor }}
+    >
       <ul
         onMouseLeave={() => {
           setPosition((pv) => ({
@@ -23,7 +29,8 @@ export const Navbar = () => {
             opacity: 0,
           }));
         }}
-        className="relative mx-auto  flex w-fit justify-between gap-10 rounded-full shadow-cyan-hover bg-slate-800 p-1 "
+        className="relative mx-auto  flex w-fit justify-between gap-10 rounded-full p-1 "
+        style={{ backgroundColor: navColor }}
       >
         <div className="flex ">
           {lefttabs.map((tab) => (

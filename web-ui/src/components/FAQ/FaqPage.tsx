@@ -35,7 +35,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="overflow-hidden bg-slate-900 px-4 py-12 text-slate-50">
+    <section className="overflow-hidden bg-transparent px-4 py-12 text-slate-50">
       <div className="relative z-10 flex flex-col items-center justify-center">
         <span className="mb-8 bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text font-medium text-transparent">
           Let's answer some questions

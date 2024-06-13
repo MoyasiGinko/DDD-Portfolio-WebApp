@@ -15,15 +15,25 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+/* globals.css */
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* Gradient background */
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to right,
+    #000000,
+    #000033,
+    #000000,
+    #1c0033,
+    #140a29
+  ); /* Adjust colors as needed */
+  /* Optional: Blur effect */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* Other styles */
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif; /* Ensure Inter font is used */
 }
 
 @layer utilities {

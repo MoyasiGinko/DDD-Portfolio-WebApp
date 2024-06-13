@@ -23,7 +23,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-slate-900 px-8 py-24 text-slate-50">
+    <section className="overflow-hidden bg-transparent px-8 py-24 text-slate-50">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-24">
         <div>
           <h3 className="text-5xl font-black leading-[1.25] md:text-7xl">
@@ -52,7 +52,7 @@ const TestimonialCarousel = () => {
             .map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
-                className="testimonial-card select-none place-content-center space-y-6 rounded-2xl border-2 border-slate-700 bg-slate-800/20 p-6 shadow-xl backdrop-blur-md cursor-grab active:cursor-grabbing"
+                className="testimonial-card select-none place-content-center space-y-6 rounded-2xl border-2 border-slate-700 bg-slate-800/80 p-6 shadow-xl backdrop-blur-md cursor-grab active:cursor-grabbing"
                 drag={index === 0 ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
                 onDragEnd={handleDragEnd}

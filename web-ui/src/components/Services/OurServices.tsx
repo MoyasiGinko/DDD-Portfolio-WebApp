@@ -20,7 +20,7 @@ interface Cards {
 
 const OurServices = () => {
   return (
-    <div className="bg-slate-900 text-slate-50">
+    <div className="bg-transparent text-slate-50">
       <h1 className="font-bold uppercase text-4xl text-center text-neutral-100">
         Our Services
       </h1>

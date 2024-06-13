@@ -42,7 +42,7 @@ const itemVariants = {
 
 const OtherServices = () => {
   return (
-    <div className="grid place-content-center overflow-hidden bg-slate-900 px-8 py-24 text-slate-50">
+    <div className="grid place-content-center overflow-hidden bg-transparent px-8 py-24 text-slate-50">
       <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8"

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Pricing = () => {
   return (
-    <div id="pricing" className="px-[3%] bg-slate-900">
+    <div id="pricing" className="px-[3%] bg-transparent">
       <div>
         <h1 className="mainfont text-[#ffffff] text-center font-bold text-[64px] max-sm:text-2xl">
           Choose what works for you

@@ -17,7 +17,7 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <div className="bg-slate-900 px-8 py-24 text-slate-50">
+    <div className="bg-tranparent px-8 py-24 text-slate-50">
       <h2 className="mb-12 text-center text-4xl font-bold">
         Why You Should Choose Us?
       </h2>
