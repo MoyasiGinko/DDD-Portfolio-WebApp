@@ -69,7 +69,7 @@ const Testimonials = () => {
 
   return (
     <section className="overflow-hidden bg-transparent w-full  text-slate-50">
-      <div className="grid grid-cols-2 p-6 mx-2 rounded-2xl border-2 border-indigo-700 items-start place-items-center max-sm:place-items-center max-sm:grid-cols-1">
+      <div className="grid grid-cols-2 p-8 mx-8 rounded-2xl border-2 border-indigo-900 items-start place-items-center max-sm:place-items-center max-sm:grid-cols-1">
         <div>
           {testimonials.map((testimonial, index) => (
             <AnimatePresence key={index}>
@@ -93,10 +93,10 @@ const Testimonials = () => {
                       src={testimonial.image}
                     />
                     <div>
-                      <p className="text-[24px] max-sm:text-xl mainfont font-[500] text-[#30312c] px-3">
+                      <p className="text-[24px] max-sm:text-xl mainfont font-[500] text-white px-3">
                         {testimonial.name}
                       </p>
-                      <p className="text-[20px] max-sm:text-sm mainfont font-[500] uppercase text-[#30312c] bg-[#DBFA9B] w-fit px-3 rounded-2xl">
+                      <p className="text-[20px] max-sm:text-sm mainfont font-[500] uppercase text-white bg-purple-500/90 w-fit px-3 rounded-2xl">
                         {testimonial.role}
                       </p>
                     </div>
@@ -110,7 +110,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="relative h-[500px] w-[300px] mx-auto">
+        <div className="floating-cards relative h-[500px] w-[300px] mx-auto z-50 ">
           {testimonials
             .slice(activeIndex, activeIndex + 5)
             .map((testimonial, index) => (
@@ -146,7 +146,7 @@ const Testimonials = () => {
       </div>
       <button
         onClick={handleNext}
-        className="bg-[#4c4d4a43] capitalize text-[#ffffff] text-[22px] font-[500] hover:text-[#0d0d0dd9] hover:bg-[#e0f63c] duration-300 rounded-full px-7 py-6 m-auto block mt-10"
+        className="bg-[#4c4d4a43] capitalize text-[#ffffff] text-[22px] font-[500] hover:text-[#0d0d0dd9] hover:bg-indigo-600 duration-300 rounded-full px-7 py-6 m-auto block mt-10"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
