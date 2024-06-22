@@ -12,6 +12,7 @@ import Contact from "../Contact/ContactForm";
 import FAQ from "../FAQ/FaqPage";
 import Footer from "../Footer/FooterPage";
 import CustomHero from "../Hero/CustomHero";
+import Testimonials from "../Cards/Testimonials";
 
 export const HomePage = (): React.ReactNode => {
   return (
@@ -28,6 +29,7 @@ export const HomePage = (): React.ReactNode => {
       </div>
       <div id="Reviews">
         <TestimonialCarousel />
+        <Testimonials />
       </div>
       <div id="Why Us?">
         <WhyChooseUs />
