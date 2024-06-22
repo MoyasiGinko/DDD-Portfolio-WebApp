@@ -28,7 +28,7 @@ export const HomePage = (): React.ReactNode => {
         <BouncyCardsFeatures />
       </div>
       <div id="Reviews">
-        <TestimonialCarousel />
+        {/* <TestimonialCarousel /> */}
         <Testimonials />
       </div>
       <div id="Why Us?">
