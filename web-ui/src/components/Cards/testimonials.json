@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Spencer",
+    "role": "E-commerce Specialist",
+    "video": "https://player.vimeo.com/video/900756046?badge=0&autopause=0&player_id=0&app_id=58479",
+    "image": "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704725597/Spencer_Pawliw_gpkj4s.jpg",
+    "feedback": "I cannot begin to explain how much those guys are lifesavers making my content just look amazing."
+  },
+  {
+    "name": "Lucy",
+    "role": "AWS expert",
+    "video": "https://player.vimeo.com/video/901915378?badge=0&autopause=0&player_id=0&app_id=58479",
+    "image": "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704986897/1688975462936_e8smo4.jpg",
+    "feedback": "Very quick turnaround time and very high quality videos. Big shoutout to them."
+  },
+  {
+    "name": "Nick",
+    "role": "Entrepreneur",
+    "video": "https://player.vimeo.com/video/900808260?badge=0&autopause=0&player_id=0&app_id=58479",
+    "image": "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704581939/IMG_3535_vtna4t.jpg",
+    "feedback": "Honestly, they are the BEST in the game and I highly recommend MZ Media if you are looking for Editor."
+  }
+]

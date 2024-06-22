@@ -1,64 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import testimonialsData from "./testimonials.json";
 
-const testimonials = [
-  {
-    name: "Spencer",
-    role: "E-commerce Specialist",
-    video:
-      "https://player.vimeo.com/video/900756046?badge=0&autopause=0&player_id=0&app_id=58479",
-    image:
-      "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704725597/Spencer_Pawliw_gpkj4s.jpg",
-    feedback:
-      "I cannot begin to explain how much those guys are lifesavers making my content just look amazing.",
-  },
-  {
-    name: "Lucy",
-    role: "AWS expert",
-    video:
-      "https://player.vimeo.com/video/901915378?badge=0&autopause=0&player_id=0&app_id=58479",
-    image:
-      "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704986897/1688975462936_e8smo4.jpg",
-    feedback:
-      "Very quick turnaround time and very high quality videos. Big shoutout to them.",
-  },
-  {
-    name: "Derek Tun",
-    role: "Fitness Coach",
-    video:
-      "https://player.vimeo.com/video/900810215?badge=0&autopause=0&player_id=0&app_id=58479",
-    image:
-      "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704725688/Derek_Tun_ttnex6.jpg",
-    feedback:
-      "The turnover rate is very quick and the support has been amazing.",
-  },
-  {
-    name: "Jonathan",
-    role: "Dietitian",
-    video:
-      "https://player.vimeo.com/video/900811450?badge=0&autopause=0&player_id=0&app_id=58479",
-    image:
-      "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704725581/Jonathan_Picture_sstl7m.png",
-    feedback:
-      "These guys are highly knowledgeable and supportive. I highly recommend MZ media if you wanna grow super fast on social media.",
-  },
-  {
-    name: "Nick",
-    role: "Entrepreneur",
-    video:
-      "https://player.vimeo.com/video/900808260?badge=0&autopause=0&player_id=0&app_id=58479",
-    image:
-      "https://res.cloudinary.com/dr5fbjefd/image/upload/v1704581939/IMG_3535_vtna4t.jpg",
-    feedback:
-      "Honestly, they are the BEST in the game and I highly recommend MZ Media if you are looking for Editor.",
-  },
-];
-
-const videoUrls = testimonials.map((testimonial) => testimonial.video);
+interface Testimonial {
+  name: string;
+  role: string;
+  video: string;
+  image: string;
+  feedback: string;
+}
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    setTestimonials(testimonialsData);
+  }, []);
 
   const handleNext = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
@@ -68,49 +27,43 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-transparent w-full  text-slate-50">
-      <div className="grid grid-cols-2 p-8 mx-8 rounded-2xl border-2 border-indigo-900 items-start place-items-center max-sm:place-items-center max-sm:grid-cols-1">
-        <div>
-          {testimonials.map((testimonial, index) => (
-            <AnimatePresence key={index}>
-              {index === activeIndex && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className={`duration-500 w-[700px] max-sm:w-full ${
-                    index !== activeIndex && "opacity-0"
-                  } md:absolute left-20`}
-                >
-                  <div className="flex gap-5 items-center">
-                    <img
-                      alt={testimonial.name}
-                      loading="lazy"
-                      width="100"
-                      height="100"
-                      decoding="async"
-                      className="rounded-full max-sm:w-16 max-sm:h-16 h-24 w-24"
-                      src={testimonial.image}
-                    />
-                    <div>
-                      <p className="text-[24px] max-sm:text-xl mainfont font-[500] text-white px-3">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-[20px] max-sm:text-sm mainfont font-[500] uppercase text-white bg-purple-500/90 w-fit px-3 rounded-2xl">
-                        {testimonial.role}
-                      </p>
+    <section className="overflow-hidden bg-transparent w-full text-slate-50">
+      <div className="flex flex-col md:flex-row justify-center items-end p-8 mx-8 rounded-2xl  space-y-8 md:space-y-0 md:space-x-8 max-sm:space-y-8">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0">
+          <AnimatePresence>
+            {testimonials.map(
+              (testimonial, index) =>
+                index === activeIndex && (
+                  <div className="duration-500 h-[450px] w-full rounded-2xl p-8 border-2 border-indigo-900  bg-gradient-to-r from-indigo-900 to-indigo-800/80">
+                    <div className="flex gap-5 items-center">
+                      <img
+                        alt={testimonial.name}
+                        loading="lazy"
+                        width="100"
+                        height="100"
+                        decoding="async"
+                        className="rounded-full w-16 h-16 md:w-24 md:h-24"
+                        src={testimonial.image}
+                      />
+                      <div>
+                        <p className="text-xl md:text-2xl font-medium text-white px-3">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-sm md:text-lg font-medium uppercase text-white bg-gradient-to-r from-violet-500 to-indigo-500 w-fit px-3 rounded-2xl">
+                          {testimonial.role}
+                        </p>
+                      </div>
                     </div>
+                    <h1 className="mt-5 md:mt-10 text-2xl md:text-3xl font-bold text-[#e9e9e8] leading-snug">
+                      {testimonial.feedback}
+                    </h1>
                   </div>
-                  <h1 className="mt-10 max-sm:my-5 text-[36px] max-sm:text-[26px] font-bold max-sm:font-semibold text-[#e9e9e8] leading-[68px] max-sm:leading-[40px]">
-                    {testimonial.feedback}
-                  </h1>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          ))}
+                )
+            )}
+          </AnimatePresence>
         </div>
 
-        <div className="floating-cards relative h-[500px] w-[300px] mx-auto z-50 ">
+        <div className="floating-cards relative h-[300px] md:h-[500px] w-full md:w-[300px] mx-auto z-50">
           {testimonials
             .slice(activeIndex, activeIndex + 5)
             .map((testimonial, index) => (
@@ -132,13 +85,12 @@ const Testimonials = () => {
               >
                 <iframe
                   src={testimonial.video}
-                  width="300"
+                  width="100%"
                   height="500"
                   frameBorder="0"
-                  className="rounded-2xl m-auto block cursor-grab active:cursor-grabbing"
+                  className="rounded-2xl block cursor-grab active:cursor-grabbing"
                   allow="autoplay; fullscreen; picture-in-picture"
                   title={`Video ${index + 1}`}
-                  style={{ borderRadius: "15px" }} // Make iframe rounded
                 />
               </motion.div>
             ))}
@@ -146,7 +98,7 @@ const Testimonials = () => {
       </div>
       <button
         onClick={handleNext}
-        className="bg-[#4c4d4a43] capitalize text-[#ffffff] text-[22px] font-[500] hover:text-[#0d0d0dd9] hover:bg-indigo-600 duration-300 rounded-full px-7 py-6 m-auto block mt-10"
+        className="bg-[#4c4d4a43] capitalize text-[#ffffff] text-lg md:text-xl font-medium hover:text-[#0d0d0dd9] hover:bg-indigo-600 duration-300 rounded-full px-6 py-4 md:px-7 md:py-6 m-auto block mt-10"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
