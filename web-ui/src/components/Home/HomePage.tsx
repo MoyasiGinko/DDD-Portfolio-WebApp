@@ -1,4 +1,4 @@
-"use clietn";
+"use client";
 import React from "react";
 import { AuroraHero } from "../Hero/AuroraHero";
 import { TextParallaxContentExample } from "../Featured/TextFeature";
