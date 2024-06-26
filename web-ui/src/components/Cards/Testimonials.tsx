@@ -13,17 +13,28 @@ interface Testimonial {
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(
+    testimonialsData || []
+  );
 
   useEffect(() => {
-    setTestimonials(testimonialsData);
+    handleNext();
   }, []);
 
   const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    setTestimonials((prevTestimonials) => {
+      if (prevTestimonials.length > 0) {
+        const newArray = [...prevTestimonials];
+        const currentObject = newArray.shift() as Testimonial;
+        newArray.push(currentObject);
+        return newArray;
+      }
+      return prevTestimonials;
+    });
   };
+
   const handleDragEnd = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    setActiveIndex((prevIndex) => (prevIndex + 0) % testimonials.length);
   };
 
   return (
