@@ -28,13 +28,13 @@ const Testimonials = () => {
 
   return (
     <section className="overflow-hidden bg-transparent w-full text-slate-50">
-      <div className="flex flex-col md:flex-row justify-center items-end p-8 mx-8 rounded-2xl  space-y-8 md:space-y-0 md:space-x-8 max-sm:space-y-8">
-        <div className="w-full md:w-1/2 mb-8 md:mb-0">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-end p-8 mx-8 rounded-2xl space-y-8 md:space-y-0 md:space-x-8 max-sm:space-y-8">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0 ">
           <AnimatePresence>
             {testimonials.map(
               (testimonial, index) =>
                 index === activeIndex && (
-                  <div className="duration-500 h-[450px] w-full rounded-2xl p-8 border-2 border-indigo-900  bg-gradient-to-r from-indigo-900 to-indigo-800/80">
+                  <div className="duration-500 h-[450px] w-full md:rounded-tr-none md:rounded-br-none rounded-[40px] p-8 border-2 border-indigo-900  bg-gradient-to-r from-indigo-900/30 to-indigo-800/30">
                     <div className="flex gap-5 items-center">
                       <img
                         alt={testimonial.name}
@@ -63,7 +63,7 @@ const Testimonials = () => {
           </AnimatePresence>
         </div>
 
-        <div className="floating-cards relative h-[300px] md:h-[500px] w-full md:w-[300px] mx-auto z-50">
+        <div className="floating-cards relative md:left-[-48px] rounded-2xl  h-[500px]  md:h-[500px] w-full md:w-[300px] mx-auto z-50">
           {testimonials
             .slice(activeIndex, activeIndex + 5)
             .map((testimonial, index) => (
@@ -74,12 +74,12 @@ const Testimonials = () => {
                 dragConstraints={{ left: 0, right: 0 }}
                 onDragEnd={handleDragEnd}
                 initial={{ opacity: 0, rotate: 0 }}
-                animate={{ opacity: 1, rotate: index * 2 }}
+                animate={{ opacity: 1, rotate: index * 10 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 style={{
                   position: "absolute",
-                  left: `${index * 4}%`,
+                  left: `${index * 20}%`,
                   zIndex: testimonials.length - index,
                 }}
               >
@@ -95,26 +95,26 @@ const Testimonials = () => {
               </motion.div>
             ))}
         </div>
-      </div>
-      <button
-        onClick={handleNext}
-        className="bg-[#4c4d4a43] capitalize text-[#ffffff] text-lg md:text-xl font-medium hover:text-[#0d0d0dd9] hover:bg-indigo-600 duration-300 rounded-full px-6 py-4 md:px-7 md:py-6 m-auto block mt-10"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="currentColor"
-          className="w-6 h-6 font-bold"
+        <button
+          onClick={handleNext}
+          className="bg-[#4c4d4a43] capitalize text-[#ffffff] text-lg md:text-xl font-medium hover:text-[#0d0d0dd9] hover:bg-indigo-600 duration-300 rounded-full px-6 py-4 md:px-7 md:py-6 m-auto mt-10 md:mt-0"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-          />
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="w-6 h-6 font-bold"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </button>
+      </div>
     </section>
   );
 };
