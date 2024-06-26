@@ -84,9 +84,9 @@ const Testimonials = () => {
                 drag={index === 0 ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
                 onDragEnd={handleDragEnd}
-                initial={{ opacity: 0, rotate: 0 }}
-                animate={{ opacity: 1, rotate: index * 10 }}
-                exit={{ opacity: 0 }}
+                initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
+                animate={{ opacity: 1, scale: 1, rotate: index * 10 }}
+                exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
                 style={{
                   position: "absolute",
