@@ -6,29 +6,30 @@ const ProjectShowcase: React.FC = () => {
 
   const handleVideoPlay = () => setIsPlaying(true);
   const handleVideoPause = () => setIsPlaying(false);
+
   const videos = [
     {
-      src: "https://www.youtube.com/embed/_ER9X87xh0I?si=Mt7jjdg13OoZVFCM",
+      src: "https://player.vimeo.com/video/900401422",
       width: 600,
       height: 340,
     },
     {
-      src: "https://www.youtube.com/embed/OUNhuE-SnYg?si=qWPHy2FFFBvrTDzY",
+      src: "https://player.vimeo.com/video/900415881",
+      width: 200,
+      height: 340,
+    },
+    {
+      src: "https://player.vimeo.com/video/914142444",
       width: 600,
       height: 340,
     },
     {
-      src: "https://www.youtube.com/embed/rlonGk2UcnE?si=s1dRCtXpru3P_K3p",
-      width: 600,
+      src: "https://player.vimeo.com/video/900448896",
+      width: 200,
       height: 340,
     },
     {
-      src: "https://www.youtube.com/embed/ERTAcF0r3D8?si=fo_bH8GqSK1tzVP1",
-      width: 600,
-      height: 340,
-    },
-    {
-      src: "https://www.youtube.com/embed/ERTAcF0r3D8?si=gIm3cLCSE50xe_LC",
+      src: "https://player.vimeo.com/video/900446602",
       width: 600,
       height: 340,
     },
@@ -36,27 +37,27 @@ const ProjectShowcase: React.FC = () => {
 
   const additionalVideos = [
     {
-      src: "https://www.youtube.com/embed/ikVXM-gwb4o?si=tabJepwEfKP9Z9NG",
+      src: "https://player.vimeo.com/video/900416270",
       width: 600,
       height: 340,
     },
     {
-      src: "https://www.youtube.com/embed/4KgPuUv-6u8?si=0uWZ0yi_2l81vKkj",
+      src: "https://player.vimeo.com/video/900415983",
+      width: 200,
+      height: 340,
+    },
+    {
+      src: "https://player.vimeo.com/video/929241158",
       width: 600,
       height: 340,
     },
     {
-      src: "https://www.youtube.com/embed/NmQj0XgQo54?si=jl1tvGFK1XhRQIXE",
-      width: 600,
+      src: "https://player.vimeo.com/video/900414787",
+      width: 200,
       height: 340,
     },
     {
-      src: "https://www.youtube.com/embed/IgyzLiTkd5k?si=QfpHqgWn2imHRNRT",
-      width: 600,
-      height: 340,
-    },
-    {
-      src: "https://www.youtube.com/embed/yIzXhzb2PP0?si=YWNMD8jVmy44OlPI",
+      src: "https://player.vimeo.com/video/929243352",
       width: 600,
       height: 340,
     },
