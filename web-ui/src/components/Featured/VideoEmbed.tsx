@@ -32,7 +32,7 @@ const VideoEmbed = () => {
             allowFullScreen
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
-            title="MZ Media Launch Video"
+            title="SS Media Launch Video"
             width="100%"
             height="100%"
             src={iframeSrc}
