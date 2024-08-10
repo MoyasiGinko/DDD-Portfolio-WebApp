@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./project-showcase.css"; // Ensure this path is correct
 
 const ProjectShowcase: React.FC = () => {
