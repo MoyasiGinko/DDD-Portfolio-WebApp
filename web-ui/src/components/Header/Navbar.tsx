@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import FadingShadow from "./FadingShadow";
+import logo from "@/public/images/SS-Media.png";
 
 const lefttabs = ["Home", "Works", "Reviews", "Why Us?"];
 const righttabs = ["Services", "Pricing", "Contact", "FAQ"];
@@ -29,7 +30,7 @@ export const Navbar = () => {
             opacity: 0,
           }));
         }}
-        className="relative mx-auto  flex w-fit justify-between gap-10 rounded-full p-1 "
+        className="relative mx-auto items-center  flex w-fit justify-between gap-10 rounded-full p-1 "
         style={{ backgroundColor: navColor }}
       >
         <div className="flex ">
@@ -45,7 +46,7 @@ export const Navbar = () => {
         </div>
 
         <a className="text-slate-300 block cursor-pointer px-3 py-1.5 text-xs uppercase md:px-5 md:py-3 md:text-base">
-          <span className="relative">LOGO</span>
+          <img src={logo.src} alt="SS Media" className="w-10 h-10" />
         </a>
 
         <div className="flex">
@@ -74,9 +75,9 @@ const Tab = ({ text, selected, setSelected, setPosition }) => {
       onClick={() => setSelected(text)}
       onMouseEnter={() => {
         if (!ref?.current) return;
-        const { width } = ref.current.getBoundingClientRect();
+        const { width } = (ref.current as HTMLElement).getBoundingClientRect();
         setPosition({
-          left: ref.current.offsetLeft,
+          left: (ref.current as HTMLElement).offsetLeft,
           width,
           opacity: 1,
         });

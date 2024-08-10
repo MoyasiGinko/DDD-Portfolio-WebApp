@@ -17,10 +17,6 @@ const Testimonials = () => {
     testimonialsData || []
   );
 
-  useEffect(() => {
-    handleNext();
-  }, []);
-
   const handleNext = () => {
     setTestimonials((prevTestimonials) => {
       if (prevTestimonials.length > 0) {
@@ -34,7 +30,7 @@ const Testimonials = () => {
   };
 
   const handleDragEnd = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 0) % testimonials.length);
+    handleNext();
   };
 
   return (
@@ -74,13 +70,13 @@ const Testimonials = () => {
           </AnimatePresence>
         </div>
 
-        <div className="floating-cards relative md:left-[-48px] rounded-2xl  h-[500px]  md:h-[500px] w-full md:w-[300px] mx-auto z-50">
+        <div className="floating-cards relative md:left-[-48px] rounded-2xl   h-[500px]  md:h-[540px] w-full md:w-[300px] mx-auto z-50 ">
           {testimonials
             .slice(activeIndex, activeIndex + 5)
             .map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
-                className="testimonial-card select-none place-content-center space-y-6 rounded-2xl cursor-grab active:cursor-grabbing"
+                className="testimonial-card select-none place-content-center   space-y-6 rounded-2xl cursor-grab active:cursor-grabbing "
                 drag={index === 0 ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
                 onDragEnd={handleDragEnd}
@@ -97,9 +93,9 @@ const Testimonials = () => {
                 <iframe
                   src={testimonial.video}
                   width="100%"
-                  height="500"
+                  height="540"
                   frameBorder="0"
-                  className="rounded-2xl block cursor-grab active:cursor-grabbing"
+                  className="rounded-[20px] block  cursor-grab active:cursor-grabbing "
                   allow="autoplay; fullscreen; picture-in-picture"
                   title={`Video ${index + 1}`}
                 />
