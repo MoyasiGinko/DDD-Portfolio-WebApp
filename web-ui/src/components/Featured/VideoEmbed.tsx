@@ -3,7 +3,7 @@ import React from "react";
 
 const VideoEmbed = () => {
   const defaultConfig = {
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/Tjpi4eG1Lg0?si=2jPEA1B-LjQPXmZb",
     autoplay: 0,
     mute: 0,
     controls: 0,
