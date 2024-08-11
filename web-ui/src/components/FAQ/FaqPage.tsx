@@ -1,56 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
+import faqsData from "./faqs.json"; // Adjust the path as needed
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<
     "videoEditing" | "graphicsDesign"
   >("videoEditing");
+  const [faqs, setFaqs] = useState<{
+    [key: string]: { question: string; answer: string }[];
+  }>({});
+
+  useEffect(() => {
+    setFaqs(faqsData);
+  }, []);
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const faqs = {
-    videoEditing: [
-      {
-        question: "What software do I need for video editing?",
-        answer:
-          "For video editing, you'll need software such as Adobe Premiere Pro, Final Cut Pro, or DaVinci Resolve. These tools offer a wide range of features to edit, cut, and enhance your videos.",
-      },
-      {
-        question: "How can I improve the quality of my videos?",
-        answer:
-          "Improving video quality can be achieved by using high-resolution footage, proper lighting, and professional editing software. Additionally, make sure to use high-quality audio equipment to enhance the overall production.",
-      },
-      {
-        question: "What is color grading in video editing?",
-        answer:
-          "Color grading is the process of adjusting the colors and tones in your video to create a specific mood or look. It involves manipulating contrast, saturation, and color balance to achieve a desired visual effect.",
-      },
-    ],
-    graphicsDesign: [
-      {
-        question: "What should I consider when designing graphics for the web?",
-        answer:
-          "When designing graphics for the web, consider factors such as resolution, file size, and format. Use vector graphics for scalability, optimize images for faster loading times, and ensure your designs are visually appealing and user-friendly.",
-      },
-      {
-        question:
-          "How do I choose the right font for a graphic design project?",
-        answer:
-          "Choosing the right font involves considering the project's theme, audience, and readability. Select fonts that complement your design and ensure they are legible across different devices and screen sizes.",
-      },
-      {
-        question: "What is the importance of whitespace in graphic design?",
-        answer:
-          "Whitespace, or negative space, is crucial in graphic design as it helps to create a clean and organized layout. It improves readability, emphasizes key elements, and enhances the overall visual appeal of your design.",
-      },
-    ],
-  };
+  if (!faqs[selectedCategory]) return null; // Ensure data is loaded before rendering
 
   return (
     <section className="overflow-hidden bg-transparent mb-20 px-4 py-12 text-slate-50">
