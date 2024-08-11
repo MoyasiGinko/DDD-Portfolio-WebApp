@@ -15,7 +15,7 @@ const Footer = () => {
   if (!data) return null; // Ensure data is loaded before rendering
 
   return (
-    <footer className="bg-black text-white p-6">
+    <footer className="bg-black text-white pt-6 px-6">
       {/* Footer Top Row */}
       <div className="flex flex-col border-b border-gray-600 pb-6 ">
         {/* Logo and Information Section */}
@@ -111,7 +111,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Row */}
-      <div className="flex flex-col md:flex-row justify-between items-center pt-6">
+      <div className="flex flex-col md:flex-row justify-between items-center pt-2">
         <div className="flex items-center space-x-4"></div>
         {/* Copyright Information */}
         <div className="text-center">
