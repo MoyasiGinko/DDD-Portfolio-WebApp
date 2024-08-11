@@ -76,17 +76,17 @@ const Testimonials = () => {
             .map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
-                className="testimonial-card select-none place-content-center   space-y-6 rounded-2xl cursor-grab active:cursor-grabbing "
+                className="testimonial-card select-none place-content-center w-full h-full  space-y-6 rounded-2xl cursor-grab active:cursor-grabbing "
                 drag={index === 0 ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
                 onDragEnd={handleDragEnd}
                 initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
-                animate={{ opacity: 1, scale: 1, rotate: index * 10 }}
+                animate={{ opacity: 1, scale: 1, rotate: index * 5 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
                 style={{
                   position: "absolute",
-                  left: `${index * 20}%`,
+                  left: `${index * 10}%`,
                   zIndex: testimonials.length - index,
                 }}
               >
