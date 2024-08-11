@@ -34,11 +34,7 @@ const FAQ = () => {
             <br />
             Questions?
           </span>
-        </div>
-
-        {/* Right part */}
-        <div className="relative z-10 lg:w-1/2">
-          <span className="mb-4 text-lg lg:text-[20px] bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent text-center w-full font-semibold">
+          <span className="mt-4 text-lg lg:text-[20px] bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent w-full font-semibold">
             Let's answer some questions
           </span>
           <div className="relative z-10 flex flex-wrap py-4 gap-4">
@@ -64,7 +60,11 @@ const FAQ = () => {
               <span className="relative z-10">Graphics Design</span>
             </button>
           </div>
-          <div className="mx-auto mt-8 max-w-full lg:max-w-3xl">
+        </div>
+
+        {/* Right part */}
+        <div className="relative z-10 lg:w-1/2">
+          <div className="mx-auto max-w-full lg:max-w-3xl">
             <div className="space-y-4">
               {faqs[selectedCategory].map(
                 (faq: { question: string; answer: string }, index: number) => (
@@ -100,14 +100,14 @@ const FAQ = () => {
               )}
             </div>
             <div className="mt-8 lg:mt-10">
-              <p className="my-4 lg:my-5 text-xl lg:text-2xl font-bold text-[#f0eaea]">
+              <p className="my-4 lg:my-5 text-xl  font-bold text-[#f0eaea]">
                 Do you have more questions?
               </p>
               <a
                 href="https://forms.gle/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#4c4d4a43] w-fit text-[#FFF0E9] text-lg lg:text-[22px] font-medium px-4 lg:px-6 py-2 lg:py-3 rounded-lg hover:text-indigo-500 flex items-center gap-2"
+                className="bg-[#4c4d4a43] w-fit text-[#FFF0E9] text-lg font-medium px-2 lg:px-3 py-2 lg:py-3 rounded-lg hover:text-indigo-500 flex items-center gap-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
