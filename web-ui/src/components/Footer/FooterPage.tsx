@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import footerData from "./footerData.json"; // Adjust the path as needed
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const [data, setData] = useState<any>(null);
@@ -121,10 +122,12 @@ const Footer = () => {
 
         {/* Back to Top Button */}
         <div className="flex items-center mb-6 md:mb-0">
-          <a
+          <motion.a
             href="#"
             className="bg-[#e7b8fa] hover:bg-[#d6a9e6] text-[#525153] p-4 rounded-full transition-colors duration-300 flex items-center justify-center"
             aria-label="Back to Top"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +148,7 @@ const Footer = () => {
                 d="M4.5 12.75l7.5-7.5 7.5 7.5"
               />
             </svg>
-          </a>
+          </motion.a>
         </div>
       </div>
     </footer>
