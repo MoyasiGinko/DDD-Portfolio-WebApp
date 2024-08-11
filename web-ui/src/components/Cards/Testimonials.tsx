@@ -34,39 +34,44 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-transparent w-full text-slate-50">
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-end p-8 mx-8 rounded-2xl space-y-8 md:space-y-0 md:space-x-8 max-sm:space-y-8">
+    <section className="overflow-hidden bg-transparent mt-20 mb-20 w-full text-slate-50">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-end p-8 mx-2 rounded-2xl space-y-8 md:space-y-0 md:space-x-8 max-sm:space-y-8">
         <div className="w-full md:w-1/2 mb-8 md:mb-0 ">
           <AnimatePresence>
-            {testimonials.map(
-              (testimonial, index) =>
-                index === activeIndex && (
-                  <div className="duration-500 h-[450px] w-full md:rounded-tr-none md:rounded-br-none rounded-[40px] p-8 border-2 border-indigo-900  bg-gradient-to-r from-indigo-900/30 to-indigo-800/30">
-                    <div className="flex gap-5 items-center">
-                      <img
-                        alt={testimonial.name}
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        className="rounded-full w-16 h-16 md:w-24 md:h-24"
-                        src={testimonial.image}
-                      />
-                      <div>
-                        <p className="text-xl md:text-2xl font-medium text-white px-3">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-sm md:text-lg font-medium uppercase text-white bg-gradient-to-r from-violet-500 to-indigo-500 w-fit px-3 rounded-2xl">
-                          {testimonial.role}
-                        </p>
+            <div className="duration-500 h-[450px] w-full md:rounded-tr-none md:rounded-br-none rounded-[40px] p-8 border-2 border-indigo-900  bg-gradient-to-r from-indigo-900/30 to-indigo-800/30">
+              {testimonials.map(
+                (testimonial, index) =>
+                  index === activeIndex && (
+                    <div key={`${testimonial.name}-${index}`}>
+                      <div
+                        className="flex gap-5 items-center"
+                        key={`${testimonial.name}-${index}`}
+                      >
+                        <img
+                          alt={testimonial.name}
+                          loading="lazy"
+                          width="100"
+                          height="100"
+                          decoding="async"
+                          className="rounded-full w-16 h-16 md:w-24 md:h-24"
+                          src={testimonial.image}
+                        />
+                        <div>
+                          <p className="text-xl md:text-2xl font-medium text-white px-3">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-sm md:text-lg font-medium uppercase text-white bg-gradient-to-r from-violet-500 to-indigo-500 w-fit px-3 rounded-2xl">
+                            {testimonial.role}
+                          </p>
+                        </div>
                       </div>
+                      <h1 className="mt-5 md:mt-10 text-2xl md:text-3xl font-bold text-[#e9e9e8] leading-snug">
+                        {testimonial.feedback}
+                      </h1>
                     </div>
-                    <h1 className="mt-5 md:mt-10 text-2xl md:text-3xl font-bold text-[#e9e9e8] leading-snug">
-                      {testimonial.feedback}
-                    </h1>
-                  </div>
-                )
-            )}
+                  )
+              )}
+            </div>
           </AnimatePresence>
         </div>
 

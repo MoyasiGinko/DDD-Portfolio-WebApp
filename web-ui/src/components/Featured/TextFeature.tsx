@@ -17,7 +17,7 @@ export const TextParallaxContentExample = () => {
 
 const IMG_PADDING = 12;
 
-const TextParallaxContent = ({ children }) => {
+const TextParallaxContent = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       style={{

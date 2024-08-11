@@ -64,7 +64,7 @@ const ProjectShowcase: React.FC = () => {
   ];
 
   return (
-    <div id="project" className="project-showcase-container">
+    <div id="project" className="project-showcase-container mt-20">
       <div className="marquee-container">
         <div className={`marquee ${isPlaying ? "paused" : ""}`}>
           {videos.map((video, index) => (

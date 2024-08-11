@@ -21,15 +21,15 @@ export const HomePage = (): React.ReactNode => {
         <CustomHero />
         {/* <AuroraHero /> */}
       </div>
-      <div id="About">
-        <TextParallaxContentExample />
-      </div>
       <div id="Works">
-        <BouncyCardsFeatures />
+        <TextParallaxContentExample />
       </div>
       <div id="Reviews">
         {/* <TestimonialCarousel /> */}
         <Testimonials />
+      </div>
+      <div id="About">
+        <BouncyCardsFeatures />
       </div>
       <div id="Why Us?">
         <WhyChooseUs />
